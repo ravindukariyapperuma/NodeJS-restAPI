@@ -1,1 +1,21 @@
-console.log("I am running.. i am changed");
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/'){
+        if (req.method === "GET"){
+            console.log("Its a get method");
+        }
+        res.write('ur on home page');
+        res.end();
+    } else if (req.url === '/another'){
+        res.write('i am another route');
+        res.end();
+    } else {
+        res.write('i am listening');
+        res.end();
+    }
+});
+
+server.listen(3000, () => {
+    console.log('Server started on port 3000...');
+});
