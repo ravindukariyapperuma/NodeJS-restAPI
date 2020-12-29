@@ -8,6 +8,10 @@ app.get('/', (req, res, next) => {
     res.send("i am the home route");
 });
 
+app.post('/', (req, res, next) => {
+
+});
+
 app.listen(3000, () => {
     console.log('Server started on port 3000...');
 });
