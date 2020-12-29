@@ -4,8 +4,17 @@ const mongoose = require('mongoose');
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-mongoose.connect('mongodb://localhost:27017/Products', {
+// mongodb+srv://ravindu:<password>@cluster0.3vqew.mongodb.net/<dbname>?retryWrites=true&w=majority
+// ravindu
+// aAPm7KSY1WKGeKxD
+
+mongoose.connect('mongodb+srv://cluster0.3vqew.mongodb.net/', 
+{
+    dbName: 'RestApi_products',
+    user: 'ravindu',
+    pass: 'aAPm7KSY1WKGeKxD',
     useNewUrlParser: true,
     useUnifiedTopology: true 
 })
