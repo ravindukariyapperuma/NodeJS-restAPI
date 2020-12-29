@@ -16,7 +16,8 @@ mongoose.connect('mongodb+srv://cluster0.3vqew.mongodb.net/',
     user: 'ravindu',
     pass: 'aAPm7KSY1WKGeKxD',
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
 .then(() => {
     console.log('Mongodb connected....');

@@ -10,13 +10,19 @@ Content-Type: application/json
 }
 
 ### GET a product by id
-GET http://localhost:3000/products/5feb491479f09e57f47e15a7
+GET http://localhost:3000/products/5feb67dce2bccb46fc1b1152
 
 ### Update a product by id
-PATCH http://localhost:3000/products/id
+PATCH http://localhost:3000/products/5feb47477dcfb23e889fdcc0
+Content-Type: application/json
+
+{
+    "name": "iMac 2021",
+    "price": 500
+}
 
 ### Delete a product by id
-DELETE http://localhost:3000/products/5feb491479f09e57f47e15a7
+DELETE http://localhost:3000/products/5feb46ee7dcfb23e889fdcbf
 
 ### 404 route Not Found
 GET http://localhost:3000/abc_xyz
