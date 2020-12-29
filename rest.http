@@ -20,3 +20,12 @@ GET http://localhost:3000/test?name=iMac&price=2399
 
 ###
 GET http://localhost:3000/test/87324658734/imac
+
+###
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{
+    "name": "iMacPro",
+    "price": 4999
+}

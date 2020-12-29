@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+app.use(express.json());
+
 mongoose.connect('mongodb://localhost:27017/Products', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
@@ -11,12 +13,14 @@ mongoose.connect('mongodb://localhost:27017/Products', {
     console.log('Mongodb connected....');
 });
 
-app.all('/test/:id/:name', (req, res) => {
+app.all('/test', (req, res) => {
     // console.log(req.query);
     // console.log(req.query.name);
     // res.send(req.query);
-    console.log(req.params);
-    res.send(req.params);
+    // console.log(req.params);
+    // res.send(req.params);
+    console.log(req.body);
+    res.send(req.body);
 });
 
 const ProductRoute = require('./Routes/Product.route');
