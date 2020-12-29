@@ -11,10 +11,12 @@ mongoose.connect('mongodb://localhost:27017/Products', {
     console.log('Mongodb connected....');
 });
 
-app.all('/test', (req, res) => {
-    console.log(req.query);
-    console.log(req.query.name);
-    res.send(req.query);
+app.all('/test/:id/:name', (req, res) => {
+    // console.log(req.query);
+    // console.log(req.query.name);
+    // res.send(req.query);
+    console.log(req.params);
+    res.send(req.params);
 });
 
 const ProductRoute = require('./Routes/Product.route');

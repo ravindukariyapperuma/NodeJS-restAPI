@@ -17,3 +17,6 @@ GET http://localhost:3000/abc_xyz
 
 ###
 GET http://localhost:3000/test?name=iMac&price=2399
+
+###
+GET http://localhost:3000/test/87324658734/imac
