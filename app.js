@@ -1,8 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
+
 const createError = require('http-errors');
 
 const app = express();
+
+//Initialize DB
+require('./initiDB')();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -10,19 +13,6 @@ app.use(express.urlencoded({extended: true}));
 // mongodb+srv://ravindu:<password>@cluster0.3vqew.mongodb.net/<dbname>?retryWrites=true&w=majority
 // ravindu
 // aAPm7KSY1WKGeKxD
-
-mongoose.connect('mongodb+srv://cluster0.3vqew.mongodb.net/', 
-{
-    dbName: 'RestApi_products',
-    user: 'ravindu',
-    pass: 'aAPm7KSY1WKGeKxD',
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-})
-.then(() => {
-    console.log('Mongodb connected....');
-});
 
 app.all('/test', (req, res) => {
     // console.log(req.query);
