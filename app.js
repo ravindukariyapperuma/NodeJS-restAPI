@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const createError = require('http-errors');
 
 const app = express();
 
@@ -37,9 +38,10 @@ const ProductRoute = require('./Routes/Product.route');
 app.use('/products', ProductRoute);
 
 app.use((req, res, next) => {
-    const err = new Error("Not found");
-    err.status = 404;
-    next(err);
+    // const err = new Error("Not found");
+    // err.status = 404;
+    // next(err);
+    next(createError(404, "Not found"));
 });
 
 //Error handler
