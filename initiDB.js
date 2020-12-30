@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+
+console.log(dotenv.parsed);
 
 module.exports = () => {
-    mongoose.connect('mongodb+srv://cluster0.3vqew.mongodb.net/', 
+    mongoose.connect(process.env.MONGODB_URI, 
 {
-    dbName: 'RestApi_products',
-    user: 'ravindu',
-    pass: 'aAPm7KSY1WKGeKxD',
+    dbName: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASS,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
